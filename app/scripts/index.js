@@ -53,16 +53,22 @@ var warrior = new Hero({
   health: 200,
   attack: 10
 });
+// Warrior image to be used
+// https://bnetcmsus-a.akamaihd.net/cms/gallery/JRUKLFUZLVQ01434398163299.jpg
 
 var mage = new Hero({
   health: 100,
   attack: 15
 });
+// Mage image to be used
+// http://www.artofmtg.com/wp-content/uploads/2014/04/Crimson-Mage-Art.jpg
 
 var rogue = new Hero({
   health: 150,
   attack: 12
 });
+// Rogue image to be used
+// http://vignette4.wikia.nocookie.net/wowwiki/images/6/62/Human_rogue.jpg/revision/latest?cb=20080808224306
 
 player1.attack()
 console.log(player1.health)
