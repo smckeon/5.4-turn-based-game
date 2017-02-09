@@ -13,6 +13,23 @@ var Handlebars = require ('handlebars')
 // Set the hero and villains Health pools.
 //
 
+// ** Game Mechanics
+//  Player chooses to be either hero or villain
+//  Turn one is always players Turn
+//  Click attack, hero attacks the villain.
+//  A timeout is set to the villan of 3 seconds.
+//  Once the timeout triggers after three seconds the villan attacks back.
+//  The health pools should reflect the damage done.
+//  End turn 1
+
+// + Create a function that begins with a click.
+// Once the player clicks "attack" the champion will attack the villain
+// for a set amount of damage. reducing the villains health by that amount
+// + Set the timeout on the villains attack to be 3 seconds to allow
+//    player to always get the first attack.
+
+//
+
 function Character(){
   this.attack = function(){
     // alert('BY MY BEARD')
@@ -25,10 +42,28 @@ function Hero(player){
 };
 Hero.prototype = new Character();
 
-var player1 = new Hero({
-  health: 100,
+var paladin = new Hero({
+  health: 150,
+  attack: 12
+});
+// Paladin image to be used
+//http://i.ytimg.com/vi/cQDjPv_Ykd8/maxresdefault.jpg
+
+var warrior = new Hero({
+  health: 200,
   attack: 10
 });
+
+var mage = new Hero({
+  health: 100,
+  attack: 15
+});
+
+var rogue = new Hero({
+  health: 150,
+  attack: 12
+});
+
 player1.attack()
 console.log(player1.health)
 function Villain(){
