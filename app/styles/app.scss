@@ -15,3 +15,29 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 img {
   max-width: 100%;
 }
+
+body{
+  background-color: #36717c;
+  color: #be961d;
+}
+
+.header{
+  text-align: center;
+  color: #e6cf8a;
+  border-bottom: 1px solid #cbbe96;
+}
+
+.hero, .villain{
+  text-align: center;
+} h5{
+  color: #cbbe96;
+} i {
+  border: 1px solid #cbbe96;
+  border-radius: 10px;
+  background-color: #23962f;
+  padding: 2px 10px 2px 10px;
+}
+
+.attack{
+  text-align: center;
+}
