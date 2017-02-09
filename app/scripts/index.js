@@ -59,9 +59,6 @@ var warrior = new Hero({
   img: "app/images/warrior.jpg"
 });
 
-
-
-
 var mage = new Hero({
   health: 100,
   attack: 15,
