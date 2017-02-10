@@ -150,8 +150,8 @@ console.log(hero);
 });
 
 $( ".dropdown-hero").change(function(event) {
-  event.preventDefault();
-  selectedHero = heroes.filter(function(hero){
+    event.preventDefault();
+    selectedHero = heroes.filter(function(hero){
     return hero.name === $(".dropdown-hero").val();
   });
   var heroSource = $("#hero-template").html();
