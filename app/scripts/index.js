@@ -55,7 +55,7 @@ var paladin = new Hero({
   name: "Paladin",
   health: 150,
   attack: 12,
-  img: "images/palading.jpg"
+  img: "images/paladin.jpg"
 });
 
 
@@ -132,7 +132,7 @@ $('button').on('click', function(event){
 
 var villainSource = $('#villain-template').html(); console.log(villainSource);
 var villainTemplate = Handlebars.compile(villainSource);
-
+console.log(myBadGuy.name);
 $(".villain").html(villainTemplate(myBadGuy));
 
 
@@ -143,4 +143,17 @@ var template = Handlebars.compile(source);
 _.each(heroes, function(hero){
   $(".dropdown-hero").append(template(hero));
 console.log(hero);
+});
+
+$( ".dropdown-hero").change(function(event) {
+  event.preventDefault();
+  var selected = $(".dropdown-hero").val();
+
+  heroes.forEach(function(hero){
+    if(hero.name === selected) {
+      var heroSource = $("#hero-template").html();
+      var heroTemplate = Handlebars.compile(heroSource);
+      $(".hero").html(heroTemplate(hero));
+    }
+  });
 });
