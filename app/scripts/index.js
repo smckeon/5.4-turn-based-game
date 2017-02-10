@@ -87,11 +87,19 @@ var rogue = new Hero({ //
 });
 
 
-function Enemy(computer){
-this.attack = computer.attack;
-this.health = computer.health;
-this.img = computer.img;
+function Enemy(options){
+var options = options || {};
+
+var defaults = {
+  name: 'i am a villain'
 };
+
+$.extend(this, defaults, options);
+};
+
+// Enemy.prototype.attack = function(hero) {
+//   hero.health -= 10;
+// };
 
 var warlock = new Enemy({
   name: "Warlock",
@@ -123,9 +131,10 @@ var witch = new Enemy({
 
 var heroes = [paladin, warrior, mage, rogue];
 var enemies = [warlock, deathknight, necromancer, witch];
+console.log('enemies', enemies);
 
 var myBadGuy = _.sample(enemies, 1)[0];
-console.log(myBadGuy);
+console.log('badGuy', myBadGuy);
 
 $('button').on('click', function(event){
   event.preventDefault();
