@@ -82,8 +82,6 @@ var rogue = new Hero({ //
   img: "../app/images/rogue.jpg"
 });
 
-// rogue.attack()
-// console.log(rogue.attack)
 
 function Enemy(computer){
 this.attack = computer.attack;
@@ -139,5 +137,5 @@ var template = Handlebars.compile(source);
 
 _.each(heroes, function(hero){
   $(".dropdown-hero").append(template(hero));
-console.log(Hero);
+console.log(hero);
 });
