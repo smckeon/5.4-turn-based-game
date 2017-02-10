@@ -49,27 +49,28 @@ Hero.prototype = new Character();
 var paladin = new Hero({
   health: 150,
   attack: 12,
-  img: "app/images/palading.jpg"
+  img: "../app/images/palading.jpg"
 });
 
 
 var warrior = new Hero({
   health: 200,
   attack: 10,
-  img: "app/images/warrior.jpg"
+  img: "../app/images/warrior.jpg"
 });
+
 
 var mage = new Hero({
   health: 100,
   attack: 15,
-  img: "app/images/mage.jpg"
+  img: "../app/images/mage.jpg"
 });
 
 
 var rogue = new Hero({ //
   health: 150,
   attack: 12,
-  img: "app/images/rogue.jpg"
+  img: "../app/images/rogue.jpg"
 });
 
 // rogue.attack()
@@ -84,30 +85,28 @@ this.img = computer.img;
 var warlock = new Enemy({
   health: 150,
   attack: 12,
-  img: "app/images/warlock.jpg"
+  img: "../app/images/warlock.jpg"
 });
 
 var deathknight = new Enemy({
   health: 200,
   attack: 10,
-  img: "app/images/deathknight.jpg"
+  img: "../app/images/deathknight.jpg"
 });
 
 var necromancer = new Enemy({
   health: 150,
   attack: 10,
-  img: "app/images/necromancer.jpg"
+  img: "../app/images/necromancer.jpg"
 });
 
 var witch = new Enemy({
   health: 150,
   attack: 10,
-  img: "app/images/witch.jpg"
+  img: "../app/images/witch.jpg"
 });
 
-var {
 
-};
 
 var myBadGuy = warlock;
 
