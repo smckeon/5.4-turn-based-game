@@ -2,6 +2,9 @@ var $ = require ('jquery');
 var Handlebars = require ('handlebars')
 var _ = require('underscore');
 
+
+var selectedHero;
+
 // Create
 
 
@@ -37,12 +40,13 @@ var _ = require('underscore');
 
 function Character(player){
   this.attack = function(enemy){
-    enemy.health = enemy.health - 15;
+    enemy.health = enemy.health - selectedHero[0].attack;
     console.log(enemy);
   };
 };
 
 function Hero(player){
+  var player = player || {};
   this.name = player.name;
   this.health = player.health;
   this.attack = player.attack;
@@ -126,7 +130,7 @@ console.log(myBadGuy);
 $('button').on('click', function(event){
   event.preventDefault();
 
-  rogue.attack(myBadGuy);
+  console.log('attack', selectedHero[0].attack);
 });
 
 
@@ -147,13 +151,10 @@ console.log(hero);
 
 $( ".dropdown-hero").change(function(event) {
   event.preventDefault();
-  var selected = $(".dropdown-hero").val();
-
-  heroes.forEach(function(hero){
-    if(hero.name === selected) {
-      var heroSource = $("#hero-template").html();
-      var heroTemplate = Handlebars.compile(heroSource);
-      $(".hero").html(heroTemplate(hero));
-    }
+  selectedHero = heroes.filter(function(hero){
+    return hero.name === $(".dropdown-hero").val();
   });
+  var heroSource = $("#hero-template").html();
+  var heroTemplate = Handlebars.compile(heroSource);
+  $(".hero").html(heroTemplate(selectedHero[0]));
 });
