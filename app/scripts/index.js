@@ -149,6 +149,7 @@ _.each(heroes, function(hero){
 console.log(hero);
 });
 
+
 $( ".dropdown-hero").change(function(event) {
     event.preventDefault();
     selectedHero = heroes.filter(function(hero){
