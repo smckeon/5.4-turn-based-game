@@ -40,7 +40,8 @@ var selectedHero;
 
 function Character(player){
   this.attack = function(enemy){
-    enemy.health = enemy.health - selectedHero[0].attack;
+    enemy.health = enemy.health - selectedHero[0].damage;
+    $("."+this.name+"-health").html(enemy.health);
     console.log(enemy);
   };
 };
@@ -49,7 +50,7 @@ function Hero(player){
   var player = player || {};
   this.name = player.name;
   this.health = player.health;
-  this.attack = player.attack;
+  this.damage = player.damage;
   this.img = player.img;
 };
 
@@ -58,7 +59,7 @@ Hero.prototype = new Character();
 var paladin = new Hero({
   name: "Paladin",
   health: 150,
-  attack: 12,
+  damage: 12,
   img: "images/paladin.jpg"
 });
 
@@ -66,7 +67,7 @@ var paladin = new Hero({
 var warrior = new Hero({
   name: "Warrior",
   health: 200,
-  attack: 10,
+  damage: 10,
   img: "images/warrior.jpg"
 });
 
@@ -74,7 +75,7 @@ var warrior = new Hero({
 var mage = new Hero({
   name: "Mage",
   health: 100,
-  attack: 15,
+  damage: 15,
   img: "images/mage.jpg"
 });
 
@@ -82,7 +83,7 @@ var mage = new Hero({
 var rogue = new Hero({ //
   name: "Rogue",
   health: 150,
-  attack: 12,
+  damage: 12,
   img: "images/rogue.jpg"
 });
 
@@ -104,28 +105,28 @@ $.extend(this, defaults, options);
 var warlock = new Enemy({
   name: "Warlock",
   health: 150,
-  attack: 12,
+  damage: 12,
   img: "images/warlock.jpg"
 });
 
 var deathknight = new Enemy({
   name: "Death Knight",
   health: 200,
-  attack: 10,
+  damage: 10,
   img: "images/deathknight.jpg"
 });
 
 var necromancer = new Enemy({
   name: "Necromancer",
   health: 150,
-  attack: 10,
+  damage: 10,
   img: "images/necromancer.jpg"
 });
 
 var witch = new Enemy({
   name: "Witch",
   health: 150,
-  attack: 10,
+  damage: 10,
   img: "images/witch.jpg"
 });
 
@@ -139,7 +140,7 @@ console.log('badGuy', myBadGuy);
 $('button').on('click', function(event){
   event.preventDefault();
 
-  console.log('attack', selectedHero[0].attack);
+  console.log('attack', selectedHero[0].attack(myBadGuy));
 });
 
 
