@@ -32,9 +32,9 @@ var Handlebars = require ('handlebars')
 
 //  every time a selected hero attacks, the enemyies health reflects the specific damage of the hero selected.
 
-function Character(){
+function Character(player){
   this.attack = function(enemy){
-    enemy.health = enemy.health - 20;
+    enemy.health = enemy.health - 15;
     console.log(enemy);
   };
 };
@@ -49,7 +49,7 @@ Hero.prototype = new Character();
 var paladin = new Hero({
   health: 150,
   attack: 12,
-  img: "http://i.ytimg.com/vi/cQDjPv_Ykd8/maxresdefault.jpg"
+  img: "app/images/palading.jpg"
 });
 
 
@@ -65,14 +65,14 @@ var warrior = new Hero({
 var mage = new Hero({
   health: 100,
   attack: 15,
-  img: "http://www.artofmtg.com/wp-content/uploads/2014/04/Crimson-Mage-Art.jpg"
+  img: "app/images/mage.jpg"
 });
 
 
 var rogue = new Hero({ //
   health: 150,
   attack: 12,
-  img: "http://vignette4.wikia.nocookie.net/wowwiki/images/6/62/Human_rogue.jpg/revision/latest?cb=20080808224306"
+  img: "app/images/rogue.jpg"
 });
 
 // rogue.attack()
@@ -86,11 +86,31 @@ this.img = computer.img;
 
 var warlock = new Enemy({
   health: 150,
-  attack: 10,
-  img: "http://mmarinett.com/wp-content/uploads/2015/06/warlock.jpg"
+  attack: 12,
+  img: "app/images/warlock.jpg"
 });
 
+var deathknight = new Enemy({
+  health: 200,
+  attack: 10,
+  img: "app/images/deathknight.jpg"
+});
 
+var necromancer = new Enemy({
+  health: 150,
+  attack: 10,
+  img: "app/images/necromancer.jpg"
+});
+
+var witch = new Enemy({
+  health: 150,
+  attack: 10,
+  img: "app/images/witch.jpg"
+});
+
+var {
+
+};
 
 var myBadGuy = warlock;
 
