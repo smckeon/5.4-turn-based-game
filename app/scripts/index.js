@@ -1,5 +1,6 @@
 var $ = require ('jquery');
 var Handlebars = require ('handlebars')
+var _ = require('underscore');
 
 // Create
 
@@ -106,9 +107,11 @@ var witch = new Enemy({
   img: "../app/images/witch.jpg"
 });
 
+var heros = [paladin, warrior, mage, rogue];
+var enemies = [warlock, deathknight, necromancer, witch];
 
-
-var myBadGuy = warlock;
+var myBadGuy = _.sample(enemies, 1)[0];
+console.log(myBadGuy);
 
 $('button').on('click', function(event){
   event.preventDefault();
