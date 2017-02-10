@@ -37,16 +37,34 @@
     <div class="container">
       <!--<div class="row">-->
       <div class="col-md-6">
-          <h1 class="dropdown-enemy">Select Your Hero</h1>
-          <select>
+          <h1 class="hero-select">Select Your Hero</h1>
+          <div >
+            <select class="dropdown-hero">
+
+              <!-- Udse this space to populate all hero select options. -->
+
+            </select>
+
+          </div>
+          <!-- <select>
             <option value="value1">Warrior</option>
             <option value="value2">Mage</option>
             <option value="value3">Rogue</option>
             <option value="value4">Paladin</option>
-          </select>
+          </select> -->
+
       </div>
 
     </div> <!--container -->
+
+    <script type="text/x-handlebars-template" id="hero-select-template">
+      <!-- <select> -->
+        <option value="value1">{Warrior}</option>
+        <option value="value2">{{Mage}}</option>
+        <option value="value3">{{Rogue}}</option>
+        <option value="value4">{{Paladin}}</option>
+      <!-- </select> -->
+    </script>
 
 
 

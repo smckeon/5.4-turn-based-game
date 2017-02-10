@@ -30,7 +30,7 @@ var Handlebars = require ('handlebars')
 // + Set the timeout on the villains attack to be 3 seconds to allow
 //    player to always get the first attack.
 
-//
+//  every time a selected hero attacks, the enemyies health reflects the specific damage of the hero selected.
 
 function Character(){
   this.attack = function(enemy){
@@ -56,8 +56,10 @@ var paladin = new Hero({
 var warrior = new Hero({
   health: 200,
   attack: 10,
-  img: "https://bnetcmsus-a.akamaihd.net/cms/gallery/JRUKLFUZLVQ01434398163299.jpg"
+  img: "app/images/warrior.jpg"
 });
+
+
 
 
 var mage = new Hero({
@@ -90,15 +92,18 @@ var warlock = new Enemy({
 
 
 
-var myBadGuy = warrior;
+var myBadGuy = warlock;
 
 $('button').on('click', function(event){
   event.preventDefault();
 
   rogue.attack(myBadGuy);
-})
+});
 
 
 
 
-;
+var source = $("#hero-select-template").html();
+var template = Handlebars.compile(source);
+
+$(".hero-dropdown").append(template(source));
