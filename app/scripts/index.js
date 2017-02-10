@@ -33,15 +33,17 @@ var Handlebars = require ('handlebars')
 //
 
 function Character(){
-  this.attack = function(){
-    // alert('BY MY BEARD')
+  this.attack = function(enemy){
+    enemy.health = enemy.health - 20;
+    console.log(enemy);
   };
 };
 
-
 function Hero(player){
   this.health = player.health;
+  this.img = player.img;
 };
+
 Hero.prototype = new Character();
 
 var paladin = new Hero({
@@ -49,35 +51,54 @@ var paladin = new Hero({
   attack: 12,
   img: "http://i.ytimg.com/vi/cQDjPv_Ykd8/maxresdefault.jpg"
 });
-// Paladin image to be used
-//http://i.ytimg.com/vi/cQDjPv_Ykd8/maxresdefault.jpg
+
 
 var warrior = new Hero({
   health: 200,
   attack: 10,
   img: "https://bnetcmsus-a.akamaihd.net/cms/gallery/JRUKLFUZLVQ01434398163299.jpg"
 });
-// Warrior image to be used
-// https://bnetcmsus-a.akamaihd.net/cms/gallery/JRUKLFUZLVQ01434398163299.jpg
+
 
 var mage = new Hero({
   health: 100,
   attack: 15,
   img: "http://www.artofmtg.com/wp-content/uploads/2014/04/Crimson-Mage-Art.jpg"
 });
-// Mage image to be used
-// http://www.artofmtg.com/wp-content/uploads/2014/04/Crimson-Mage-Art.jpg
 
-var rogue = new Hero({
+
+var rogue = new Hero({ //
   health: 150,
   attack: 12,
   img: "http://vignette4.wikia.nocookie.net/wowwiki/images/6/62/Human_rogue.jpg/revision/latest?cb=20080808224306"
 });
-// Rogue image to be used
-// http://vignette4.wikia.nocookie.net/wowwiki/images/6/62/Human_rogue.jpg/revision/latest?cb=20080808224306
 
-player1.attack()
-console.log(player1.health)
-function Villain(){
+// rogue.attack()
+// console.log(rogue.attack)
 
+function Enemy(computer){
+this.attack = computer.attack;
+this.health = computer.health;
+this.img = computer.img;
 };
+
+var warlock = new Enemy({
+  health: 150,
+  attack: 10,
+  img: "http://mmarinett.com/wp-content/uploads/2015/06/warlock.jpg"
+});
+
+
+
+var myBadGuy = warrior;
+
+$('button').on('click', function(event){
+  event.preventDefault();
+
+  rogue.attack(myBadGuy);
+})
+
+
+
+
+;
