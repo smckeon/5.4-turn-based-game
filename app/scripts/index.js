@@ -158,3 +158,6 @@ $( ".dropdown-hero").change(function(event) {
   var heroTemplate = Handlebars.compile(heroSource);
   $(".hero").html(heroTemplate(selectedHero[0]));
 });
+
+// testing
+var myObject = {};
