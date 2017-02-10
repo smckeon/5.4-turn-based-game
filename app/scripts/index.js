@@ -55,7 +55,7 @@ var paladin = new Hero({
   name: "Paladin",
   health: 150,
   attack: 12,
-  img: "../app/images/palading.jpg"
+  img: "images/palading.jpg"
 });
 
 
@@ -63,7 +63,7 @@ var warrior = new Hero({
   name: "Warrior",
   health: 200,
   attack: 10,
-  img: "../app/images/warrior.jpg"
+  img: "images/warrior.jpg"
 });
 
 
@@ -71,7 +71,7 @@ var mage = new Hero({
   name: "Mage",
   health: 100,
   attack: 15,
-  img: "../app/images/mage.jpg"
+  img: "images/mage.jpg"
 });
 
 
@@ -79,7 +79,7 @@ var rogue = new Hero({ //
   name: "Rogue",
   health: 150,
   attack: 12,
-  img: "../app/images/rogue.jpg"
+  img: "images/rogue.jpg"
 });
 
 
@@ -93,28 +93,28 @@ var warlock = new Enemy({
   name: "Warlock",
   health: 150,
   attack: 12,
-  img: "../app/images/warlock.jpg"
+  img: "images/warlock.jpg"
 });
 
 var deathknight = new Enemy({
   name: "Death Knight",
   health: 200,
   attack: 10,
-  img: "../app/images/deathknight.jpg"
+  img: "images/deathknight.jpg"
 });
 
 var necromancer = new Enemy({
   name: "Necromancer",
   health: 150,
   attack: 10,
-  img: "../app/images/necromancer.jpg"
+  img: "images/necromancer.jpg"
 });
 
 var witch = new Enemy({
   name: "Witch",
   health: 150,
   attack: 10,
-  img: "../app/images/witch.jpg"
+  img: "images/witch.jpg"
 });
 
 var heroes = [paladin, warrior, mage, rogue];
@@ -129,6 +129,11 @@ $('button').on('click', function(event){
   rogue.attack(myBadGuy);
 });
 
+
+var villainSource = $('#villain-template').html(); console.log(villainSource);
+var villainTemplate = Handlebars.compile(villainSource);
+
+$(".villain").html(villainTemplate(myBadGuy));
 
 
 
