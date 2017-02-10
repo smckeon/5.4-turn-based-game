@@ -160,4 +160,4 @@ $( ".dropdown-hero").change(function(event) {
 });
 
 // testing
-var myObject = {};
+var myObject = {'name': 'inputOfName'};
