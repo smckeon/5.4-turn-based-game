@@ -33,6 +33,8 @@ var _ = require('underscore');
 
 //  every time a selected hero attacks, the enemyies health reflects the specific damage of the hero selected.
 
+
+
 function Character(player){
   this.attack = function(enemy){
     enemy.health = enemy.health - 15;
@@ -41,13 +43,16 @@ function Character(player){
 };
 
 function Hero(player){
+  this.name = player.name;
   this.health = player.health;
+  this.attack = player.attack;
   this.img = player.img;
 };
 
 Hero.prototype = new Character();
 
 var paladin = new Hero({
+  name: "Paladin",
   health: 150,
   attack: 12,
   img: "../app/images/palading.jpg"
@@ -55,6 +60,7 @@ var paladin = new Hero({
 
 
 var warrior = new Hero({
+  name: "Warrior",
   health: 200,
   attack: 10,
   img: "../app/images/warrior.jpg"
@@ -62,6 +68,7 @@ var warrior = new Hero({
 
 
 var mage = new Hero({
+  name: "Mage",
   health: 100,
   attack: 15,
   img: "../app/images/mage.jpg"
@@ -69,6 +76,7 @@ var mage = new Hero({
 
 
 var rogue = new Hero({ //
+  name: "Rogue",
   health: 150,
   attack: 12,
   img: "../app/images/rogue.jpg"
@@ -84,30 +92,34 @@ this.img = computer.img;
 };
 
 var warlock = new Enemy({
+  name: "Warlock",
   health: 150,
   attack: 12,
   img: "../app/images/warlock.jpg"
 });
 
 var deathknight = new Enemy({
+  name: "Death Knight",
   health: 200,
   attack: 10,
   img: "../app/images/deathknight.jpg"
 });
 
 var necromancer = new Enemy({
+  name: "Necromancer",
   health: 150,
   attack: 10,
   img: "../app/images/necromancer.jpg"
 });
 
 var witch = new Enemy({
+  name: "Witch",
   health: 150,
   attack: 10,
   img: "../app/images/witch.jpg"
 });
 
-var heros = [paladin, warrior, mage, rogue];
+var heroes = [paladin, warrior, mage, rogue];
 var enemies = [warlock, deathknight, necromancer, witch];
 
 var myBadGuy = _.sample(enemies, 1)[0];
@@ -125,4 +137,7 @@ $('button').on('click', function(event){
 var source = $("#hero-select-template").html();
 var template = Handlebars.compile(source);
 
-$(".hero-dropdown").append(template(source));
+_.each(heroes, function(hero){
+  $(".dropdown-hero").append(template(hero));
+console.log(Hero);
+});
