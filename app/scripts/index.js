@@ -43,8 +43,10 @@ function Character(player){
     enemy.health = enemy.health - selectedHero[0].damage;
     $("."+enemy.name+"-health").html(enemy.health); // .this.name-health
     console.log(enemy);
+    };
   };
-};
+
+
 
 function Hero(player){
   var player = player || {};
@@ -140,6 +142,10 @@ console.log('badGuy', myBadGuy);
 //Physical button to press attack.
 $('button').on('click', function(event){
   event.preventDefault();
+function enemyAttack(enemy){
+console.log(myBadGuy.attack(selectedHero[0]))
+}
+ setTimeout(enemyAttack, 2000);
 
   console.log('attack', selectedHero[0].attack(myBadGuy));
 });
@@ -169,6 +175,3 @@ $( ".dropdown-hero").change(function(event) {
   var heroTemplate = Handlebars.compile(heroSource);
   $(".hero").html(heroTemplate(selectedHero[0]));
 });
-
-// testing
-var myObject = {'name': 'inputOfName'};
