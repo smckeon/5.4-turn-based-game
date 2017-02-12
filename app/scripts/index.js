@@ -41,7 +41,7 @@ var selectedHero;
 function Character(player){
   this.attack = function(enemy){
     enemy.health = enemy.health - selectedHero[0].damage;
-    $("."+this.name+"-health").html(enemy.health);
+    $("."+enemy.name+"-health").html(enemy.health); // .this.name-health
     console.log(enemy);
   };
 };
@@ -137,6 +137,7 @@ console.log('enemies', enemies);
 var myBadGuy = _.sample(enemies, 1)[0];
 console.log('badGuy', myBadGuy);
 
+//Physical button to press attack.
 $('button').on('click', function(event){
   event.preventDefault();
 
