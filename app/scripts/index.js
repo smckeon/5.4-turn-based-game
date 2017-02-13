@@ -3,7 +3,6 @@ var Handlebars = require ('handlebars')
 var _ = require('underscore');
 
 
-var selectedHero;
 
 // Create
 
@@ -39,12 +38,14 @@ var selectedHero;
 
 
 function Character(player){
-  this.attack = function(enemy){
+  this.attack = function(enemy){//character
     enemy.health = enemy.health - selectedHero[0].damage;
     $("."+enemy.name+"-health").html(enemy.health); // .this.name-health
     console.log(enemy);
     };
   };
+
+  // function
 
 
 
@@ -103,6 +104,7 @@ $.extend(this, defaults, options);
 // Enemy.prototype.attack = function(hero) {
 //   hero.health -= 10;
 // };
+Enemy.prototype = new Character();
 
 var warlock = new Enemy({
   name: "Warlock",
@@ -135,6 +137,8 @@ var witch = new Enemy({
 var heroes = [paladin, warrior, mage, rogue];
 var enemies = [warlock, deathknight, necromancer, witch];
 console.log('enemies', enemies);
+
+var selectedHero;
 
 var myBadGuy = _.sample(enemies, 1)[0];
 console.log('badGuy', myBadGuy);
