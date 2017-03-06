@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>5.4 Turn Based Game</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+
+    <div class="container">
+      <div class="col-md-12 header">
+        <h1>War</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <!--<div class="row">-->
+      <div class="col-md-6 hero-select-container">
+          <!-- <h1 class="hero-select">Select Your Hero</h1> -->
+          <div>
+            <select class="dropdown-hero">
+              <option value="">Select A Hero</option>
+
+              <!-- Use this space to populate all hero select options. -->
+
+            </select>
+
+          </div>
+
+      </div>
+
+    </div> <!--container -->
+
+
+    <div class="container">
+      <div class="col-md-6 hero">
+        <!-- hero info -->
+
+      </div>
+
+
+      <div class="col-md-6 villain">
+          <!-- villain info -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col-md-12 attack">
+        <button type="button">Attack!</button>
+      </div>
+    </div>
+
+    <script type="text/x-handlebars-template" id="hero-select-template">
+      <!-- <select> -->
+        <option value="{{name}}">{{name}}</option>
+
+      <!-- </select> -->
+    </script>
+
+    <script type="text/x-handlebars-template" id="hero-template">
+      <h2>{{name}}</h2>
+      <h5><i>Health</i></h5>
+      <h5><i class="{{name}}-health">{{health}}</i></h5>
+      <img src="{{img}}" alt="" class="hero-image">
+    </script>
+
+    <script type="text/x-handlebars-template" id="villain-template">
+      <!-- the name isnt populating on screen -->
+      <h2>{{name}}</h2>
+      <h5><i>Health</i></h5>
+      <h5><i class="{{name}}-health">{{health}}</i></h5>
+      <img src="{{img}}" alt="" class="villain-image">
+    </script>
+
+
+
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
