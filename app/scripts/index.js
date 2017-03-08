@@ -40,8 +40,8 @@ var _ = require('underscore');
 function Character(player){
   this.attack = function(enemy){//character
     enemy.health = enemy.health - selectedHero[0].damage;
-    $("."+enemy.name+"-health").html(enemy.health); // .this.name-health
-    console.log(enemy);
+    var enemySlug = enemy.name.replace(' ', '-');
+    $("." + enemySlug + "-health").html(enemy.health); // .this.name-health
     };
   };
 
@@ -158,6 +158,7 @@ console.log(myBadGuy.attack(selectedHero[0]))
 var villainSource = $('#villain-template').html(); console.log(villainSource);
 var villainTemplate = Handlebars.compile(villainSource);
 console.log(myBadGuy.name);
+myBadGuy.slug = myBadGuy.name.replace(' ', '-');
 $(".villain").html(villainTemplate(myBadGuy));
 
 
