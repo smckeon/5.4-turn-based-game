@@ -1,4 +1,4 @@
-## 5.4-collaboration
+## 5.4 Turn Based Game
 This was my first and only group project at The Iron Yard. My partner and I designed a turn based fighting game in the browser.
 
 ## Technical Toolbox
